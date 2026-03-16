@@ -2,148 +2,194 @@
 
 End-to-end machine learning project that analyzes and predicts housing prices using the Melbourne Housing Market dataset.
 
----
-
-## Project Overview
-
-This project demonstrates a complete machine learning workflow including:
-
-- Data cleaning and preprocessing  
-- Exploratory data analysis (EDA)  
-- Feature engineering  
-- Baseline modeling using Linear Regression  
-- Hyperparameter tuning of a Random Forest model  
-- Model evaluation and comparison  
-- Feature importance analysis  
-- Prediction performance visualization  
-
-The objective is to understand the factors influencing housing prices and build a predictive model capable of estimating property values.
+This project demonstrates a full data science workflow including data cleaning, exploratory analysis, feature engineering, predictive modeling, and model evaluation.
 
 ---
 
-## Dataset
+# Project Overview
 
-The dataset contains housing transaction data from Melbourne, Australia and includes structural and geographic attributes of residential properties.
+The goal of this project is to build machine learning models capable of predicting housing prices in Melbourne, Australia based on structural and location-based property features.
 
-Key variables include:
+The analysis walks through the full machine learning pipeline:
 
-- Rooms  
-- Distance from the city center  
-- Land size  
-- Building area  
-- Number of bathrooms  
-- Year built  
-
-Target variable:
-
-```
-Price
-```
+- Data loading and preprocessing
+- Exploratory data analysis
+- Feature transformation and encoding
+- Baseline modeling
+- Advanced model training
+- Hyperparameter tuning
+- Model evaluation
+- Feature importance analysis
+- Prediction visualization
 
 ---
 
-## Machine Learning Models
+# Dataset
 
-### Linear Regression
+This project uses the **Melbourne Housing Market dataset** from Kaggle.
 
-Linear Regression was used as a baseline model to estimate housing prices and provide a point of comparison for more flexible models.
+Dataset source:  
+https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot
 
-### Random Forest Regressor
+The dataset includes housing transaction data such as:
 
-A tuned Random Forest model was implemented to capture nonlinear relationships between property features and housing prices.
+- **Rooms** — number of rooms in the property  
+- **Distance** — distance from Melbourne's central business district  
+- **Bedroom2 / Bathroom / Car** — structural property characteristics  
+- **Landsize / BuildingArea** — physical size of the property  
+- **YearBuilt** — construction year of the home  
+
+The target variable for prediction is **Price**, representing the sale price of each property.
+
+The dataset is automatically downloaded within the notebook using KaggleHub.
+
+Example code used in the notebook:
+
+    import kagglehub
+
+    path = kagglehub.dataset_download("dansbecker/melbourne-housing-snapshot")
+
+The primary dataset file used in this project is:
+
+    melb_data.csv
+
+---
+
+# Project Workflow
+
+The analysis follows a structured machine learning pipeline:
+
+1. Data Loading  
+2. Initial Data Inspection  
+3. Data Cleaning  
+4. Feature Transformation and Encoding  
+5. Exploratory Data Analysis  
+6. Train/Test Split  
+7. Baseline Model (Linear Regression)  
+8. Random Forest Model  
+9. Hyperparameter Tuning  
+10. Model Evaluation  
+11. Feature Importance Analysis  
+12. Prediction Visualization  
+
+---
+
+# Data Exploration
+
+Exploratory data analysis was conducted to understand relationships between variables and identify patterns influencing housing prices.
+
+Examples include:
+
+- distribution of housing prices
+- correlation analysis between numeric features
+- relationship between distance from the city center and price
+- average price by property type
+
+---
+
+# Baseline Model
+
+A **Linear Regression model** was used as a baseline to provide a simple reference point for model performance.
+
+This helps determine whether more complex models provide meaningful improvements.
+
+---
+
+# Random Forest Model
+
+A **Random Forest Regressor** was implemented to capture nonlinear relationships within the housing data.
+
+Random Forest models are well suited for structured tabular datasets because they:
+
+- handle nonlinear relationships
+- manage feature interactions
+- reduce overfitting through ensemble learning
 
 Hyperparameter tuning was performed using **RandomizedSearchCV** to improve model performance.
 
 ---
 
-## Model Evaluation
+# Model Evaluation
 
-Models were evaluated using standard regression metrics:
+Model performance was evaluated using:
 
-- **MAE (Mean Absolute Error)**  
-- **RMSE (Root Mean Squared Error)**  
-- **R² (Coefficient of Determination)**  
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- R² Score
 
-The Random Forest model significantly outperformed the baseline Linear Regression model, explaining a larger portion of variance in housing prices and producing lower prediction error.
+Example model performance:
 
----
+    Random Forest Performance
+    MAE: 163051
+    RMSE: 269678
+    R²: 0.816
 
-## Model Results
-
-### Feature Importance
-
-The Random Forest model identifies the variables that most strongly influence housing price predictions.
-
-![Feature Importance](images/feature_importance.png)
-
-### Predicted vs Actual Prices
-
-The plot below compares predicted prices to actual housing prices from the test dataset.
-
-![Prediction Results](images/prediction_vs_actual.png)
+These results indicate the Random Forest model captures a substantial portion of the variance in housing prices.
 
 ---
 
-## Key Insights
+# Prediction Performance Visualization
 
-Exploratory analysis revealed several important relationships:
+The model's predictive accuracy is visualized by comparing predicted housing prices with actual prices.
 
-- Larger homes with more rooms generally have higher prices  
-- Properties located farther from the city center tend to have lower prices  
-- Structural features such as land size and building area strongly influence property value  
+![Prediction Performance](prediction_vs_actual.png)
 
-Feature importance analysis confirmed that property size and location-related attributes are major contributors to price prediction.
+Points near the diagonal line represent accurate predictions, while dispersion away from the line indicates prediction error.
 
----
-
-## Project Structure
-
-```
-melbourne-housing-price-prediction
-│
-├── End_to_End_Machine_Learning.ipynb
-├── requirements.txt
-└── README.md
-```
+The visualization suggests the model performs reasonably well overall but shows increased variance for higher-priced properties.
 
 ---
 
-## Technologies Used
+# Feature Importance Visualization
 
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
-- Scikit-learn  
+Feature importance analysis helps identify which variables contribute most to price predictions.
 
----
+![Feature Importance](feature_importance.png)
 
-## How to Run the Project
-
-1. Clone the repository
-
-```
-git clone https://github.com/YOUR_USERNAME/melbourne-housing-price-prediction.git
-```
-
-2. Install dependencies
-
-```
-pip install -r requirements.txt
-```
-
-3. Open the notebook
-
-```
-End_to_End_Machine_Learning.ipynb
-```
+This analysis provides insight into which structural and location features most strongly influence housing prices.
 
 ---
 
-## Author
+# Running the Project
 
-Richard Hanly  
-Bachelor's in Software Development
+Clone the repository:
+
+    git clone https://github.com/richardhanly-us/melbourne-housing-price-prediction.git
+
+Install dependencies:
+
+    pip install -r requirements.txt
+
+Open the notebook:
+
+    Melbourne_Housing_Price_Prediction_ML.ipynb
+
+The dataset will automatically download from Kaggle when the notebook runs.
 
 ---
+
+# Future Improvements
+
+Potential improvements include:
+
+- experimenting with additional models such as Gradient Boosting or XGBoost
+- deeper feature engineering
+- additional cross-validation techniques
+- improved handling of outliers
+- deploying the model as an API or web application
+
+---
+
+# Author
+
+Richard Hanly
+
+Digital Services Specialist and Software Development student focused on:
+
+- data analytics
+- machine learning
+- distributed systems
+- backend development
+
+Email:  
+richardrhanly@gmail.com
