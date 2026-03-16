@@ -33,3 +33,58 @@ Key variables include:
 - Year built
 
 Target variable:
+
+Price
+
+---
+
+## Models Used
+
+### Linear Regression
+
+Used as a baseline model to estimate housing prices.
+
+### Random Forest Regressor
+
+A tuned Random Forest model was used to capture nonlinear relationships between housing features and price.
+
+Hyperparameter tuning was performed using **RandomizedSearchCV**.
+
+---
+
+## Results
+
+The Random Forest model significantly outperformed the Linear Regression baseline.
+
+Key insights:
+
+- Property size and number of rooms strongly influence price
+- Distance from the city center negatively correlates with housing value
+- Structural property characteristics play a major role in price prediction
+
+---
+
+## Project Structure
+melbourne-housing-price-prediction
+│
+├── End_to_End_Machine_Learning.ipynb
+├── requirements.txt
+└── README.md
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+
+---
+
+## Author
+
+Richard Hanly  
+Bachelor's in Software Development
