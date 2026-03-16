@@ -68,6 +68,22 @@ The Random Forest model significantly outperformed the baseline Linear Regressio
 
 ---
 
+## Model Results
+
+### Feature Importance
+
+The Random Forest model identifies the variables that most strongly influence housing price predictions.
+
+![Feature Importance](images/feature_importance.png)
+
+### Predicted vs Actual Prices
+
+The plot below compares predicted prices to actual housing prices from the test dataset.
+
+![Prediction Results](images/prediction_vs_actual.png)
+
+---
+
 ## Key Insights
 
 Exploratory analysis revealed several important relationships:
