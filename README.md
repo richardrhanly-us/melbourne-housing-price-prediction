@@ -132,7 +132,7 @@ These results indicate the Random Forest model captures a substantial portion of
 
 The model's predictive accuracy is visualized by comparing predicted housing prices with actual prices.
 
-![Prediction Performance](prediction_vs_actual.png)
+![Prediction Performance](images/prediction_vs_actual.png)
 
 Points near the diagonal line represent accurate predictions, while dispersion away from the line indicates prediction error.
 
@@ -144,7 +144,7 @@ The visualization suggests the model performs reasonably well overall but shows 
 
 Feature importance analysis helps identify which variables contribute most to price predictions.
 
-![Feature Importance](feature_importance.png)
+![Feature Importance](images/feature_importance.png)
 
 This analysis provides insight into which structural and location features most strongly influence housing prices.
 
