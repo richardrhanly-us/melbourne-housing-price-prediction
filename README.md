@@ -2,6 +2,8 @@
 
 End-to-end machine learning project that analyzes and predicts housing prices using the Melbourne Housing Market dataset.
 
+Technologies: Python, Pandas, Scikit-learn, Data Analysis, Machine Learning
+
 This project demonstrates a full data science workflow including data cleaning, exploratory analysis, feature engineering, predictive modeling, and model evaluation.
 
 ---
